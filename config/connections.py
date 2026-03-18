@@ -10,4 +10,8 @@ MYSQL_ENGINE = create_engine(
     'mysql+pymysql://user:pass@192.168.1.11:3306/dbname'
 )
 
+MSSQL_ENGINE = create_engine(
+    'mssql+pyodbc://sa:Kepi-123@localhost'
+)
+
 #TODO: add and edit to correct database address, username, and password.
