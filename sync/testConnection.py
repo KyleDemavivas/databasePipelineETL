@@ -15,8 +15,26 @@ def run_sync():
             for row in result:
                 print("username: ", row.user_namefl)
                 
-            logger.info("Fetch is successful!")      
+            logger.info("Fetch is successful!")
+            
+            return True      
             
     except Exception as e:
         logger.error(f": {e}")
         print("Something went wrong. Check log files for details")
+        return False
+    
+def run_user_sync():
+    try:
+        with MSSQL_ENGINE.connect() as conn:
+            result = conn.execute(text(
+                "SELECT TOP 1 final_qtyinput FROM mounter_process ORDER BY created_at DESC"
+            )).fetchall()
+            print(result)
+            logger.info("success!")
+            return True
+        
+    except Exception as e:
+        logger.error(f": {e}.")
+        print(f"Error: {e}.")
+        return False            
