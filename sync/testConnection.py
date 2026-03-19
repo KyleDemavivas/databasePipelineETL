@@ -1,4 +1,4 @@
-import sys, os
+import sys, os, time
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from sqlalchemy import text
@@ -9,7 +9,7 @@ logger = get_logger(__name__)
 
 try:
     with MSSQL_ENGINE.connect() as connection:
-        result = connection.execute(text("select * from user_account")).ftchall()
+        result = connection.execute(text("select * from user_account")).fetchall()
     
         for row in result:
             print("username: ", row.user_namefl)
