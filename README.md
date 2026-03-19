@@ -15,6 +15,15 @@ The concept of the project is shown above, 4 different database environment to b
 ## TOOLS
 As the project touches on database manipulation, python is mainly used for this project as it offers the best libraries and dependencies on interacting with multiple different database environments, mainly MySQL, PostgreSQL, and MSSQL.
 
+## HOW IT WORKS
+This project's goal is to streamline the migration and fetching of new or update data from several database environments, this is possible using Python, SQLAlchemy and the required drivers per database environments, this project currently uses MSSQL, MySQL, and PostgreSQL drivers.
+
+![diagram](docs/images/process_diagram.svg)
+
+The system basically fetches tables needed from the database sources, transforms it into digestible data for the target central database, and loads into the appropriate table.
+
+The system makes use of logs in order for the user to correctly identify points of failure or which modules has successfully completed its operation and which has failed.
+
 ### INSTALLATION
 >You need to have pip installed in order to have dependencies work
 
@@ -30,6 +39,4 @@ Verify that pip is installed:
 
 Install required dependencies:
 `pip install -r requirements.txt`
-
-> more installation instructions to come.
 
