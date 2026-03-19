@@ -11,7 +11,8 @@ MYSQL_ENGINE = create_engine(
 )
 
 MSSQL_ENGINE = create_engine(
-    'mssql+pyodbc://sa:Kepi-123@localhost'
+    'mssql+pyodbc://sa:Kepi-123@localhost/prod_traceability'
+    '?driver=ODBC+Driver+17+for+SQL+Server'
 )
 
 #TODO: add and edit to correct database address, username, and password.
